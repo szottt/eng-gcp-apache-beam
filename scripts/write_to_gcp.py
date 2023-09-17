@@ -2,8 +2,8 @@ import apache_beam as beam
 import os
 import keys as chaves
 
-serviceAccount = chaves.serviceAccount
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = serviceAccount
+#serviceAccount = chaves.serviceAccount
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = chaves.serviceAccount
 
 p1 = beam.Pipeline()
 
@@ -36,7 +36,7 @@ Qtd_Atraso = (
 tabela_atrasos = (
     {'Qtd_Atrasos':Qtd_Atraso,'Tempo_atraso':Tempo_atraso}
     | "Group By" >> beam.CoGroupByKey()
-    | "Saida Para GCP" >> beam.io.WriteToText(r"gs://apache-beam1/Voos_atrados_qtd.csv")
+    | "Saida Para GCP" >> beam.io.WriteToText(r"gs://apache-beam1/Voos_atrados_qtd2.csv")
 )
 
 p1.run()
