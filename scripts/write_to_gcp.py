@@ -1,8 +1,8 @@
 import apache_beam as beam
 import os
-import key.py
+import keys as chaves
 
-serviceAccount = '/home/szot/projetos/Key/curso-dataflow-beam-399318-e4bb60e85876.json'
+serviceAccount = chaves.serviceAccount
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = serviceAccount
 
 p1 = beam.Pipeline()
