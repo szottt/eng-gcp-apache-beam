@@ -1,5 +1,6 @@
 import apache_beam as beam
 import os
+import key.py
 
 serviceAccount = '/home/szot/projetos/Key/curso-dataflow-beam-399318-e4bb60e85876.json'
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = serviceAccount
