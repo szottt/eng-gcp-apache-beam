@@ -30,16 +30,19 @@ Para começar a trabalhar com o Apache Beam, siga os passos abaixo para configur
 1. **Instale a virtualenv**:
 
    Primeiro, instale a virtualenv executando o seguinte comando:
+
    sudo apt install python3-virtualenv
 
 2. **Crie uma virtualenv**:
 
     Em seguida, crie uma virtualenv para isolar seu ambiente de desenvolvimento:
+
     virtualenv -p python3 apache-beam
 
 3. **Instale as bibliotecas necessárias**:
 
     Para instalar as bibliotecas necessárias, utilize o arquivo requirements.txt fornecido. Execute o seguinte comando dentro da sua virtualenv:
+
     pip install -r requirements.txt
 
 Agora, você está pronto para começar a trabalhar com o Apache Beam em um ambiente isolado e configurado adequadamente. 🛠️
