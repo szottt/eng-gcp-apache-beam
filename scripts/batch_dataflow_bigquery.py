@@ -46,7 +46,7 @@ def criar_dict_nivel0(record):
     return(dict_)
 
 table_schema = 'airport:STRING, lista_Qtd_Atrasos:INTEGER, lista_Tempo_Atrasos:INTEGER'
-tabela = 'curso-dataflow-beam-399318:curso_dataflow_voos.curso_dataflow_voos_atraso'
+tabela = 'curso-dataflow-beam-399318.curso_dataflow_voos.curso_dataflow_voos_atraso'
 
 Tempo_Atrasos = (
   p1
@@ -67,7 +67,7 @@ Qtd_Atrasos = (
 )
 
 tabela_atrasos = (
-    {'Qtd_Atrasos':Qtd_Atrasos,'Tempo_Atrasos':Tempo_Atrasos}
+    {'Qtd_Atrasos':Qtd_Atrasos,'Tempo_Atrasos':Tempo_Atrasos} 
     | beam.CoGroupByKey()
     | beam.Map(lambda record: criar_dict_nivel1(record))
     | beam.Map(lambda record: desaninhar_dict(record))
@@ -77,7 +77,7 @@ tabela_atrasos = (
                               schema=table_schema,
                               write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND,
                               create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
-                              custom_gcs_temp_location = 'gs://curso-apache-beam/temp' )
+                              custom_gcs_temp_location = 'gs://apache-beam1/temp' )
 
 )
 
